@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let music_pause_button = document.getElementById("music_pause_button");
 
   // Back and Next button
-  let back_button = document.getElementById("back_button"); 
-  let next_button = document.getElementById("next_button"); 
+  let back_button = document.getElementById("back_button");
+  let next_button = document.getElementById("next_button");
 
   // Volume_controler
   let Volume_controler = document.getElementById("Volume_controler");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Current song
   let current_song = 0;
 
-  // All Songs array 
+  // All Songs array
   let All_song_file = [
     "./Assets/Ik_Vaari_Aa_Full_Song.m4a",
     "./Assets/Chogada.mp3",
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "./Assets/Kesariya.m4a",
     "./Assets/Illegal_Weapon_2.mp3",
     "./Assets/Lehanga.m4a",
-  ]
+  ];
 
   let all_music_duration = [
     "03:47",
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "02:52",
     "04:18",
     "03:45",
-  ]
+  ];
 
   // Actual music
   let Music = document.getElementById("actual_song");
@@ -70,13 +70,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   all_songs.forEach((element, index) => {
     element.addEventListener("click", () => {
-      element.querySelector(".play_animation").innerHTML = `<img class="invert w-6 mr-2" src="https://wynk.in/_next/static/media/animation.43a00529.svg" alt="play music image">`;
+      element.querySelector(
+        ".play_animation"
+      ).innerHTML = `<img class="invert w-6 mr-2" src="https://wynk.in/_next/static/media/animation.43a00529.svg" alt="play music image">`;
       // Update the name of song which is currently playing
       song_name.innerText = element.querySelector("h1").innerText;
       Artists_name.innerText = element.querySelector("p").innerText;
       // Changing the image of song which is currently playing
       song_image.src = element.querySelector("img").src;
-      // Changing the music 
+      // Changing the music
       Music.src = All_song_file[index];
       current_song = index;
       Music.play();
@@ -91,12 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
         music_pause_button.classList.remove("hidden");
       }
       all_songs.forEach((song_div, i) => {
-        if(i != index){
-          song_div.querySelector(".play_animation").innerHTML = all_music_duration[i];
+        if (i != index) {
+          song_div.querySelector(".play_animation").innerHTML =
+            all_music_duration[i];
         }
-      })
-    })
-  })
+      });
+    });
+  });
 
   // Play or pause the Music
   play_pause_button.addEventListener("click", () => {
@@ -113,42 +116,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Back button - go to previous music
   back_button.addEventListener("click", () => {
-    if(current_song > 0){
+    if (current_song > 0) {
       current_song--;
       all_songs[current_song].click();
     }
-  })
+  });
 
   // Next button - go to previous music
   next_button.addEventListener("click", () => {
-    if(current_song < 11){
+    if (current_song < 11) {
       current_song++;
       all_songs[current_song].click();
     }
-  })
+  });
 
   // Volume controler
-  Volume_controler.addEventListener("input",() => {
+  Volume_controler.addEventListener("input", () => {
     Music.volume = Volume_controler.value;
-  })
+  });
 
   // Options_button
   Options_button.addEventListener("click", (event) => {
     event.stopPropagation();
-    if(Options_div.classList.contains("hidden")){
+    if (Options_div.classList.contains("hidden")) {
       Options_div.classList.remove("hidden");
-    }
-    else{
+    } else {
       Options_div.classList.add("hidden");
     }
-  })
+  });
 
   // Close the option when click outside
   window.addEventListener("click", () => {
-    if(!Options_div.classList.contains("hidden")){
+    if (!Options_div.classList.contains("hidden")) {
       Options_div.classList.add("hidden");
     }
-  })
+  });
 
   // Update progress bar as Music plays
   Music.addEventListener("timeupdate", () => {
