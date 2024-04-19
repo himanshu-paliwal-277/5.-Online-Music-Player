@@ -25,25 +25,25 @@
   >
     <main class="flex h-screen w-full">
       <!-- Song which is playing is here -->
-      <section class="w-1/3 h-full flex items-center relative">
+      <section class="lg:w-1/3 w-full lg:h-full flex lg:items-center bottom-0 absolute lg:relative z-10">
         <!-- logo -->
-        <div class="absolute w-full top-2 px-6">
+        <div class="absolute w-full top-2 px-6 lg:block hidden">
           <div
-            class="flex items-center justify-center bg-gradient-to-t from-sky-400 to-sky-500 shadow-xl py-2 rounded-lg"
+            class="flex items-center justify-center bg-gradient-to-b from-orange-300 to-orange-200 shadow-xl py-2 rounded-lg"
           >
-            <div class="bg-sky-400 mr-3 rounded-full">
+            <div class="mr-3 rounded-full">
               <img class="w-10" src="./Assets/logo.png" alt="logo" />
             </div>
-            <span class="text-2xl text-white font-semibold"
+            <span class="text-2xl text-green-600 font-semibold"
               >Online Music Player</span
             >
           </div>
         </div>
         <div
-          class="mx-6 px-6 py-12 w-full rounded-xl bg-gradient-to-t from-orange-50 to-orange-300 overflow-hidden shadow-xl relative"
+          class="lg:mx-6 mx-0 lg:px-6 px-2 lg:py-12 py-8 w-full rounded-xl bg-gradient-to-t from-orange-50 to-orange-300 overflow-hidden shadow-xl relative"
         >
           <!-- Options -->
-          <div>
+          <div class="lg:block hidden">
             <i
               id="Options_button"
               class="fa-solid fa-ellipsis absolute right-6 top-5 cursor-pointer hover:scale-110 active:scale-100"
@@ -66,17 +66,17 @@
           </div>
           <img
             id="song_image"
-            class="w-44 h-44 mx-auto mb-4 rounded-3xl shadow-2xl"
+            class="w-44 h-44 mx-auto mb-4 rounded-3xl shadow-2xl lg:block hidden"
             src="https://c.saavncdn.com/023/Raabta-Hindi-2017-500x500.jpg"
             alt="song image"
           />
           <!-- Music Name -->
-          <div class="flex flex-col items-center mb-8">
+          <div class="flex flex-col items-center mb-8 lg:flex hidden">
             <h1 id="song_name" class="text-2xl font-semibold">Ik Vaari Aa</h1>
             <p id="Artists_name" class="opacity-60">Pritam, Arijit Singh</p>
           </div>
           <!-- Controls -->
-          <div class="flex justify-between items-center px-8 my-8 relative">
+          <div class="flex justify-between items-center px-8 lg:my-8 mb-4 relative">
             <div class="pr-4">
               <i
                 class="fa-solid fa-repeat cursor-pointer hover:scale-[1.2] active:scale-[1] duration-150"
@@ -130,7 +130,6 @@
               </div>
             </div>
           </div>
-          <!-- <button id="playPauseBtn" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Play</button> -->
           <div class="flex items-center relative px-10">
             <span class="absolute left-2" id="currentTime">00:00</span>
             <!-- Music Progress bar -->
@@ -145,8 +144,8 @@
         </div>
       </section>
       <!-- All songs here -->
-      <section class="w-2/3 h-full pr-2 overflow-y-scroll overflow-x-hidden">
-        <ul>
+      <section class="lg:w-2/3 w-full h-full pr-2 overflow-y-scroll overflow-x-hidden">
+        <ul class="sm:pl-0 pl-1">
           <!-- Song which is currently playing -->
           <audio
             id="actual_song"
@@ -154,9 +153,9 @@
             src="./Assets/Ik_Vaari_Aa_Full_Song.m4a"
           ></audio>
           <li
-            class="bg-white px-14 py-3 flex justify-between mb-2 mt-1 sticky top-0 z-10 shadow-xl"
+            class="bg-white sm:px-14 px-7 py-3 flex justify-between mb-2 mt-1 sticky top-0 z-10 shadow-xl"
           >
-            <span>Track</span><span>Artists</span><span>Duration</span>
+            <span>Track</span><span class="sm:opacity-100 opacity-0">Artists</span><span>Duration</span>
           </li>
           <!-- Song 1 -->
           <li
@@ -166,16 +165,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >1</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://c.saavncdn.com/023/Raabta-Hindi-2017-500x500.jpg"
                 alt="song image"
               />
-              <h1 class="text-lg">Ik Vaari Aa</h1>
+              <h1 class="sm:text-lg text-base">Ik Vaari Aa</h1>
             </div>
-            <p class="opacity-60 w-1/3">Pritam, Arijit Singh</p>
-            <div class="play_animation mr-8">
+            <p class="sm:block hidden opacity-60 w-1/3">Pritam, Arijit Singh</p>
+            <div class="play_animation sm:mr-8 mr-2">
               <img
                 class="invert w-6 mr-2"
                 src="https://wynk.in/_next/static/media/animation.43a00529.svg"
@@ -195,16 +194,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >2</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://i.scdn.co/image/ab67616d00001e020cdd32bef7af8af90d9f801d"
                 alt="song image"
               />
-              <h1 class="text-lg">Chogada</h1>
+              <h1 class="sm:text-lg text-base">Chogada</h1>
             </div>
-            <p class="opacity-60 w-1/3">Darshan Raval, Asees Kaur</p>
-            <div class="play_animation mr-8">04:09</div>
+            <p class="sm:block hidden opacity-60 w-1/3">Darshan Raval, Asees Kaur</p>
+            <div class="play_animation sm:mr-8 mr-2">04:09</div>
             <i
               class="fa-solid fa-ellipsis absolute right-4 hidden group-hover:block"
               style="font-size: 20px"
@@ -218,16 +217,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >3</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://i.scdn.co/image/ab67616d00001e02bca30634e6cad10b97c03d21"
                 alt="song image"
               />
-              <h1 class="text-lg">Ae Dil Hai Mushkil</h1>
+              <h1 class="sm:text-lg text-base">Ae Dil Hai Mushkil</h1>
             </div>
-            <p class="opacity-60 w-1/3">Pritam</p>
-            <div class="play_animation mr-8">05:00</div>
+            <p class="sm:block hidden opacity-60 w-1/3">Pritam</p>
+            <div class="play_animation sm:mr-8 mr-2">05:00</div>
             <i
               class="fa-solid fa-ellipsis absolute right-4 hidden group-hover:block"
               style="font-size: 20px"
@@ -241,16 +240,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >4</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://c.saavncdn.com/240/Coca-Cola-From-Luka-Chuppi--Hindi-2019-20190204075008-500x500.jpg"
                 alt="song image"
               />
-              <h1 class="text-lg">Coca Cola</h1>
+              <h1 class="sm:text-lg text-base">Coca Cola</h1>
             </div>
-            <p class="opacity-60 w-1/3">Tony Kakkar, Neha Kakkar</p>
-            <div class="play_animation mr-8">02:59</div>
+            <p class="sm:block hidden opacity-60 w-1/3">Tony Kakkar, Neha Kakkar</p>
+            <div class="play_animation sm:mr-8 mr-2">02:59</div>
             <i
               class="fa-solid fa-ellipsis absolute right-4 hidden group-hover:block"
               style="font-size: 20px"
@@ -264,16 +263,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >5</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://i.scdn.co/image/ab67616d00001e0255faae6f85c59153f37a0a45"
                 alt="song image"
               />
-              <h1 class="text-lg">First Class</h1>
+              <h1 class="sm:text-lg text-base">First Class</h1>
             </div>
-            <p class="opacity-60 w-1/3">Arijit, Neeti Mohan</p>
-            <div class="play_animation mr-8">04:37</div>
+            <p class="sm:block hidden opacity-60 w-1/3">Arijit, Neeti Mohan</p>
+            <div class="play_animation sm:mr-8 mr-2">04:37</div>
             <i
               class="fa-solid fa-ellipsis absolute right-4 hidden group-hover:block"
               style="font-size: 20px"
@@ -287,16 +286,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >6</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://i2o.scdn.co/image/ab67706c0000cfa3647bdd4b0b8d30fa3ff5150d"
                 alt="song image"
               />
-              <h1 class="text-lg">Bala Bala</h1>
+              <h1 class="sm:text-lg text-base">Bala Bala</h1>
             </div>
-            <p class="opacity-60 w-1/3">Sohail Sen, Vishal Dadlani</p>
-            <div class="play_animation mr-8">02:17</div>
+            <p class="sm:block hidden opacity-60 w-1/3">Sohail Sen, Vishal Dadlani</p>
+            <div class="play_animation sm:mr-8 mr-2">02:17</div>
             <i
               class="fa-solid fa-ellipsis absolute right-4 hidden group-hover:block"
               style="font-size: 20px"
@@ -310,16 +309,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >7</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://i.scdn.co/image/ab67616d00001e0290d98409f70719daa0dc0421"
                 alt="song image"
               />
-              <h1 class="text-lg">Bekhayali</h1>
+              <h1 class="sm:text-lg text-base">Bekhayali</h1>
             </div>
-            <p class="opacity-60 w-1/3">Sachet Tandon</p>
-            <div class="play_animation mr-8">06:10</div>
+            <p class="sm:block hidden opacity-60 w-1/3">Sachet Tandon</p>
+            <div class="play_animation sm:mr-8 mr-2">06:10</div>
             <i
               class="fa-solid fa-ellipsis absolute right-4 hidden group-hover:block"
               style="font-size: 20px"
@@ -333,16 +332,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >8</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://i.scdn.co/image/ab67616d00001e0202dde7bfff94df00c8b76eb4"
                 alt="song image"
               />
-              <h1 class="text-lg">Besabriyaan</h1>
+              <h1 class="sm:text-lg text-base">Besabriyaan</h1>
             </div>
-            <p class="opacity-60 w-1/3">Armaan Malik</p>
-            <div class="play_animation mr-8">03:30</div>
+            <p class="sm:block hidden opacity-60 w-1/3">Armaan Malik</p>
+            <div class="play_animation sm:mr-8 mr-2">03:30</div>
             <i
               class="fa-solid fa-ellipsis absolute right-4 hidden group-hover:block"
               style="font-size: 20px"
@@ -356,16 +355,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >9</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://i.scdn.co/image/ab67616d00001e0240c98561f61a572a20ba71e1"
                 alt="song image"
               />
-              <h1 class="text-lg">Besharmi Ki Height</h1>
+              <h1 class="sm:text-lg text-base">Besharmi Ki Height</h1>
             </div>
-            <p class="opacity-60 w-1/3">Benny Dayal</p>
-            <div class="play_animation mr-8">04:16</div>
+            <p class="sm:block hidden opacity-60 w-1/3">Benny Dayal</p>
+            <div class="play_animation sm:mr-8 mr-2">04:16</div>
             <i
               class="fa-solid fa-ellipsis absolute right-4 hidden group-hover:block"
               style="font-size: 20px"
@@ -379,16 +378,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >10</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://i.scdn.co/image/ab67616d00001e02c08202c50371e234d20caf62"
                 alt="song image"
               />
-              <h1 class="text-lg">Kesariya</h1>
+              <h1 class="sm:text-lg text-base">Kesariya</h1>
             </div>
-            <p class="opacity-60 w-1/3">Arijit Singh</p>
-            <div class="play_animation mr-8">02:52</div>
+            <p class="sm:block hidden opacity-60 w-1/3">Arijit Singh</p>
+            <div class="play_animation sm:mr-8 mr-2">02:52</div>
             <i
               class="fa-solid fa-ellipsis absolute right-4 hidden group-hover:block"
               style="font-size: 20px"
@@ -402,16 +401,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >11</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://i.scdn.co/image/ab67616d00001e0292cc21b3b1386ef3c810894d"
                 alt="song image"
               />
-              <h1 class="text-lg">Illegal Weapon</h1>
+              <h1 class="sm:text-lg text-base">Illegal Weapon</h1>
             </div>
-            <p class="opacity-60 w-1/3">Jasmine Sandlas</p>
-            <div class="play_animation mr-8">04:18</div>
+            <p class="sm:block hidden opacity-60 w-1/3">Jasmine Sandlas</p>
+            <div class="play_animation sm:mr-8 mr-2">04:18</div>
             <i
               class="fa-solid fa-ellipsis absolute right-4 hidden group-hover:block"
               style="font-size: 20px"
@@ -425,16 +424,16 @@
               class="text-xl opacity-60 absolute left-6 group-hover:opacity-100"
               >12</span
             >
-            <div class="flex items-center w-1/3 ml-8">
+            <div class="flex items-center sm:w-1/3 w-full sm:ml-8 ml-0">
               <img
-                class="w-12 h-12 mr-6 rounded-lg shadow-xl"
+                class="sm:w-12 w-10 sm:h-12 h-10 mr-6 rounded-lg shadow-xl"
                 src="https://i.scdn.co/image/ab67616d00001e02a7ac07fdfc0cad3722a709a9"
                 alt="song image"
               />
-              <h1 class="text-lg">Lehanga</h1>
+              <h1 class="sm:text-lg text-base">Lehanga</h1>
             </div>
-            <p class="opacity-60 w-1/3">Jass Manak</p>
-            <div class="play_animation mr-8">03:45</div>
+            <p class="sm:block hidden opacity-60 w-1/3">Jass Manak</p>
+            <div class="play_animation sm:mr-8 mr-2">03:45</div>
             <i
               class="fa-solid fa-ellipsis absolute right-4 hidden group-hover:block"
               style="font-size: 20px"
