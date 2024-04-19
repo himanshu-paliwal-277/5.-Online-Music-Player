@@ -1,0 +1,27 @@
+section {
+  scrollbar-width: thin;
+  scrollbar-color: #9be3ff #00b7ff00;
+}
+
+/* Skeleton for songs */
+.skeleton {
+  animation: loading 2s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-color: #ffffff;
+  }
+  60% {
+    background-color: #ffffffd8;
+  }
+  100% {
+    background-color: #ffffff;
+  }
+}
+
+@media (max-width: 720px) {
+  section {
+    scrollbar-width: none;
+  }
+}
